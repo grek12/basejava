@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 /**
  * Array based storage for Resumes
@@ -8,7 +8,9 @@ public class ArrayStorage {
     int count = 0;
 
     void clear() {
-        Arrays.fill(storage, 0, count, null);
+        for (int i = 0 ; i<count;i++){
+            storage[i]=null;
+        }
         count=0;
     }
 
@@ -46,7 +48,11 @@ public class ArrayStorage {
      * @return array, contains only Resumes in storage (without null)
      */
     Resume[] getAll() {
-       return new Resume[size()];
+       Resume[] result = new Resume[count];
+        for (int i = 0; i < count; i++) {
+            result[i] = storage[i];
+        }
+       return  result;
     }
 
     int size() {
