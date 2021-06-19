@@ -6,7 +6,8 @@ public class ArrayStorage {
     int count = 0;
 
     void clear() {
-
+        storage = new Resume[storage.length];
+        count=0;
     }
 
     void save(Resume r) {
